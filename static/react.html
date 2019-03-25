@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<!-- saved from url=(0033)http://127.0.0.1:5500/demo06.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="./react_files/react.js.下载"></script>
+    <script src="./react_files/react-dom.js.下载"></script>
+    <script src="./react_files/browser.min.js.下载"></script>
+    <title>react</title>
+</head>
+<body>
+    <div id="example"><div data-reactroot=""><label>用户名</label><input type="search" placeholder="情书名字" required=""><br><label>密码</label><input type="password" placeholder="情书密码"><!-- react-text: 7 -->  <!-- /react-text --><br><input type="submit" value="login"><!-- react-text: 10 -->           <!-- /react-text --><input type="submit" value="clear"></div></div>
+    <script type="text/babel">
+        var MyLogin=React.createClass({
+            render:function(){
+                return <div>
+                            <label>{this.props.y}</label>
+                            <input type="search" placeholder={this.props.u} required/><br/>    
+                            <label>{this.props.m}</label>
+                            <input type="password" placeholder={this.props.p}/>  <br/>
+                            <input type="submit" value={this.props.l}/>           <input type="submit" value={this.props.c}/>       
+                        </div>
+            }
+        })
+        ReactDOM.render(
+            <MyLogin y="用户名" m="密码" p="情书密码" u="情书名字" l="login" c="clear"></MyLogin>,
+            document.getElementById("example")
+        )
+    </script>
+<!-- Code injected by live-server -->
+<script type="text/javascript">
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					head.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					head.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+</body></html>
